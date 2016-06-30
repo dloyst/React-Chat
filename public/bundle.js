@@ -20375,7 +20375,7 @@
 
 	var _SignIn2 = _interopRequireDefault(_SignIn);
 
-	var _App = __webpack_require__(582);
+	var _App = __webpack_require__(583);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -26001,11 +26001,11 @@
 
 	var _reactRouter = __webpack_require__(169);
 
-	var _Modal = __webpack_require__(596);
+	var _Modal = __webpack_require__(318);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _Nav = __webpack_require__(318);
+	var _Nav = __webpack_require__(582);
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
@@ -27587,6 +27587,26 @@
 	  value: true
 	});
 
+	var _getPrototypeOf = __webpack_require__(232);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(258);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(259);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(263);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(310);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -27595,69 +27615,82 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = function () {
-	  return _react2.default.createElement(
-	    _reactBootstrap.Navbar,
-	    { inverse: true },
-	    _react2.default.createElement(
-	      _reactBootstrap.Navbar.Header,
-	      null,
-	      _react2.default.createElement(
-	        _reactBootstrap.Navbar.Brand,
-	        null,
-	        'Super Sweet Chat App'
-	      ),
-	      _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
-	    ),
-	    _react2.default.createElement(
-	      _reactBootstrap.Navbar.Collapse,
-	      null,
-	      _react2.default.createElement(
-	        _reactBootstrap.Nav,
-	        null,
+	var _class = function (_React$Component) {
+	  (0, _inherits3.default)(_class, _React$Component);
+
+	  function _class(props) {
+	    (0, _classCallCheck3.default)(this, _class);
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(_class).call(this, props));
+
+	    _this.state = { show: false };
+	    return _this;
+	  }
+
+	  (0, _createClass3.default)(_class, [{
+	    key: 'closeModal',
+	    value: function closeModal() {
+	      var show = false;
+	      this.setState({ show: show });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'modal-container', style: { height: 200 } },
 	        _react2.default.createElement(
-	          _reactBootstrap.NavDropdown,
-	          { eventKey: 3, title: 'Users', id: 'basic-nav-dropdown' },
-	          _react2.default.createElement(
-	            _reactBootstrap.MenuItem,
-	            { eventKey: 3.1 },
-	            'User 1'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.MenuItem,
-	            { eventKey: 3.2 },
-	            'User 2'
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.MenuItem,
-	            { eventKey: 3.3 },
-	            'User 3'
-	          ),
-	          _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-	          _react2.default.createElement(
-	            _reactBootstrap.MenuItem,
-	            { eventKey: 3.3 },
-	            'My Profile'
-	          )
-	        )
-	      ),
-	      _react2.default.createElement(
-	        _reactBootstrap.Nav,
-	        { pullRight: true },
-	        _react2.default.createElement(
-	          _reactBootstrap.NavItem,
-	          { eventKey: 1, href: '#' },
-	          'Home'
+	          _reactBootstrap.Button,
+	          {
+	            bsStyle: 'primary',
+	            bsSize: 'large',
+	            onClick: function onClick() {
+	              return _this2.setState({ show: true });
+	            }
+	          },
+	          'Let\'s Get Started!'
 	        ),
 	        _react2.default.createElement(
-	          _reactBootstrap.NavItem,
-	          { eventKey: 2, href: '#' },
-	          'About'
+	          _reactBootstrap.Modal,
+	          {
+	            show: this.state.show,
+	            'aria-labelledby': 'contained-modal-title'
+	          },
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Header,
+	            { closeButton: true },
+	            _react2.default.createElement(
+	              _reactBootstrap.Modal.Title,
+	              { id: 'contained-modal-title' },
+	              'What\'s Your Name?'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Body,
+	            null,
+	            'Please Enter Your Username',
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('input', { placeholder: 'username' })
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Modal.Footer,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { onClick: this.closeModal.bind(this) },
+	              'Close'
+	            )
+	          )
 	        )
-	      )
-	    )
-	  );
-	};
+	      );
+	    }
+	  }]);
+	  return _class;
+	}(_react2.default.Component);
+
+	exports.default = _class;
 
 /***/ },
 /* 319 */
@@ -46830,10 +46863,92 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(319);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function () {
+	  return _react2.default.createElement(
+	    _reactBootstrap.Navbar,
+	    { inverse: true },
+	    _react2.default.createElement(
+	      _reactBootstrap.Navbar.Header,
+	      null,
+	      _react2.default.createElement(
+	        _reactBootstrap.Navbar.Brand,
+	        null,
+	        'Super Sweet Chat App'
+	      ),
+	      _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
+	    ),
+	    _react2.default.createElement(
+	      _reactBootstrap.Navbar.Collapse,
+	      null,
+	      _react2.default.createElement(
+	        _reactBootstrap.Nav,
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.NavDropdown,
+	          { eventKey: 3, title: 'Users', id: 'basic-nav-dropdown' },
+	          _react2.default.createElement(
+	            _reactBootstrap.MenuItem,
+	            { eventKey: 3.1 },
+	            'User 1'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.MenuItem,
+	            { eventKey: 3.2 },
+	            'User 2'
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.MenuItem,
+	            { eventKey: 3.3 },
+	            'User 3'
+	          ),
+	          _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
+	          _react2.default.createElement(
+	            _reactBootstrap.MenuItem,
+	            { eventKey: 3.3 },
+	            'My Profile'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        _reactBootstrap.Nav,
+	        { pullRight: true },
+	        _react2.default.createElement(
+	          _reactBootstrap.NavItem,
+	          { eventKey: 1, href: '#' },
+	          'Home'
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.NavItem,
+	          { eventKey: 2, href: '#' },
+	          'About'
+	        )
+	      )
+	    )
+	  );
+	};
+
+/***/ },
+/* 583 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	var _toConsumableArray2 = __webpack_require__(583);
+	var _toConsumableArray2 = __webpack_require__(584);
 
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -46861,11 +46976,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _MessageList = __webpack_require__(593);
+	var _MessageList = __webpack_require__(594);
 
 	var _MessageList2 = _interopRequireDefault(_MessageList);
 
-	var _NewMessage = __webpack_require__(595);
+	var _NewMessage = __webpack_require__(596);
 
 	var _NewMessage2 = _interopRequireDefault(_NewMessage);
 
@@ -46916,14 +47031,14 @@
 	exports.default = _class;
 
 /***/ },
-/* 583 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _from = __webpack_require__(584);
+	var _from = __webpack_require__(585);
 
 	var _from2 = _interopRequireDefault(_from);
 
@@ -46942,34 +47057,34 @@
 	};
 
 /***/ },
-/* 584 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(585), __esModule: true };
-
-/***/ },
 /* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(267);
-	__webpack_require__(586);
-	module.exports = __webpack_require__(245).Array.from;
+	module.exports = { "default": __webpack_require__(586), __esModule: true };
 
 /***/ },
 /* 586 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(267);
+	__webpack_require__(587);
+	module.exports = __webpack_require__(245).Array.from;
+
+/***/ },
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx            = __webpack_require__(246)
 	  , $export        = __webpack_require__(244)
 	  , toObject       = __webpack_require__(235)
-	  , call           = __webpack_require__(587)
-	  , isArrayIter    = __webpack_require__(588)
+	  , call           = __webpack_require__(588)
+	  , isArrayIter    = __webpack_require__(589)
 	  , toLength       = __webpack_require__(283)
-	  , createProperty = __webpack_require__(589)
-	  , getIterFn      = __webpack_require__(590);
+	  , createProperty = __webpack_require__(590)
+	  , getIterFn      = __webpack_require__(591);
 
-	$export($export.S + $export.F * !__webpack_require__(592)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(593)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -46999,7 +47114,7 @@
 
 
 /***/ },
-/* 587 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -47016,7 +47131,7 @@
 	};
 
 /***/ },
-/* 588 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -47029,7 +47144,7 @@
 	};
 
 /***/ },
-/* 589 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47042,10 +47157,10 @@
 	};
 
 /***/ },
-/* 590 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(591)
+	var classof   = __webpack_require__(592)
 	  , ITERATOR  = __webpack_require__(288)('iterator')
 	  , Iterators = __webpack_require__(273);
 	module.exports = __webpack_require__(245).getIteratorMethod = function(it){
@@ -47055,7 +47170,7 @@
 	};
 
 /***/ },
-/* 591 */
+/* 592 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -47083,7 +47198,7 @@
 	};
 
 /***/ },
-/* 592 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(288)('iterator')
@@ -47109,7 +47224,7 @@
 	};
 
 /***/ },
-/* 593 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47142,7 +47257,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Message = __webpack_require__(594);
+	var _Message = __webpack_require__(595);
 
 	var _Message2 = _interopRequireDefault(_Message);
 
@@ -47177,7 +47292,7 @@
 	exports.default = _class;
 
 /***/ },
-/* 594 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47211,7 +47326,7 @@
 	};
 
 /***/ },
-/* 595 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47293,121 +47408,6 @@
 			}
 		}]);
 		return _class;
-	}(_react2.default.Component);
-
-	exports.default = _class;
-
-/***/ },
-/* 596 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _getPrototypeOf = __webpack_require__(232);
-
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-	var _classCallCheck2 = __webpack_require__(258);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(259);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	var _possibleConstructorReturn2 = __webpack_require__(263);
-
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-	var _inherits2 = __webpack_require__(310);
-
-	var _inherits3 = _interopRequireDefault(_inherits2);
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactBootstrap = __webpack_require__(319);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var _class = function (_React$Component) {
-	  (0, _inherits3.default)(_class, _React$Component);
-
-	  function _class(props) {
-	    (0, _classCallCheck3.default)(this, _class);
-
-	    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(_class).call(this, props));
-
-	    _this.state = { show: false };
-	    return _this;
-	  }
-
-	  (0, _createClass3.default)(_class, [{
-	    key: 'closeModal',
-	    value: function closeModal() {
-	      var show = false;
-	      this.setState({ show: show });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'modal-container', style: { height: 200 } },
-	        _react2.default.createElement(
-	          _reactBootstrap.Button,
-	          {
-	            bsStyle: 'primary',
-	            bsSize: 'large',
-	            onClick: function onClick() {
-	              return _this2.setState({ show: true });
-	            }
-	          },
-	          'Let\'s Get Started!'
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Modal,
-	          {
-	            show: this.state.show,
-	            'aria-labelledby': 'contained-modal-title'
-	          },
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Header,
-	            { closeButton: true },
-	            _react2.default.createElement(
-	              _reactBootstrap.Modal.Title,
-	              { id: 'contained-modal-title' },
-	              'What\'s Your Name?'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Body,
-	            null,
-	            'Please Enter Your Username',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('input', { placeholder: 'username' })
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Modal.Footer,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Button,
-	              { onClick: this.closeModal.bind(this) },
-	              'Close'
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	  return _class;
 	}(_react2.default.Component);
 
 	exports.default = _class;
