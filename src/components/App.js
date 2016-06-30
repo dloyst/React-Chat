@@ -3,17 +3,17 @@ import MessageList from './MessageList';
 import NewMessage from './NewMessage';
 
 const socket = io();
+let oldMessages = [];
+
+socket.on('getMessageHistory', (messageHistory) => {
+	oldMessages = [...messageHistory];
+})
 
 export default class extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			messages: [
-				{ 
-					user: null,
-					message: null
-				}
-			]
+			messages: oldMessages
 		}
 
 		let that = this;
@@ -29,8 +29,8 @@ export default class extends React.Component {
 
 		return (
 			<div>
-				<MessageList messages={allMessages} />
-				<NewMessage />
+				<MessageList user={this.props.params.user} messages={allMessages} />
+				<NewMessage user={this.props.params.user} />
 			</div>
 		)
 	}

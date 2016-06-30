@@ -8,8 +8,15 @@ export default class extends React.Component {
 
 	render() {
 
+		let user = this.props.user;
 		let allMessages = this.props.messages.map((message, i) => {
-			return <Message key={i} user={message.user} content={message.message} />
+			return message.user === user ?
+				(
+					<Message key={i} left='right' user={message.user} content={message.message} />
+				) :
+				(
+					<Message key={i} left='left' user={message.user} content={message.message} />
+				)
 		});
 
 		return (

@@ -6,7 +6,7 @@ export default class extends React.Component {
 		super(props);
 		this.sendMessage = this.sendMessage.bind(this);
 		this.messageValue = this.messageValue.bind(this);
-		this.state = {user: 'Dave', message: ''};
+		this.state = {user: '', message: ''};
 	}
 
 	sendMessage(e) {
@@ -17,12 +17,12 @@ export default class extends React.Component {
 	}
 
 	messageValue(e) {
-		this.setState({ message: e.target.value });
+		this.setState({ user: this.props.user, message: e.target.value });
 	}
 
 	render() {
 		return (
-		  <form onSubmit={this.sendMessage}>
+		  <form id='chatForm' onSubmit={this.sendMessage}>
 		    <input id="m" type='text' autocomplete='off' placeholder='Send a Message!'
 		    	onChange={this.messageValue}
 		    	value={this.state.message}/>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-export default () => {
+export default (props) => {
+  function determineUser() {
+    return props.username ? 'Hey there, ' + props.username : 'Super Sweet Chat App';
+  }
   return (
     <Navbar inverse>
       <Navbar.Header>
         <Navbar.Brand>
-          Super Sweet Chat App
+          {`${determineUser()}`}
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>

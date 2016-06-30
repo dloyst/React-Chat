@@ -6,13 +6,16 @@ const app = express();
 const http = Server(app);
 const io = socketIo(http);
 
+let messageHistory = [];
+
 app.use('/', express.static('public'));
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  io.emit('getMessageHistory', messageHistory);
 
   socket.on('sendMessage', message => {
-  	console.log('Message Received: ' + message);
+  	messageHistory.push(message);
   	io.emit('addMessage', message);
   })
 

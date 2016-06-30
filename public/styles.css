@@ -1,3 +1,8 @@
+
+@media (min-width: 768px) { ... }
+ 
+@media (max-width: 767px) { ... }
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +14,7 @@ body {
   font: 13px Helvetica, Arial;
 }
 
-form {
+#chatForm {
   background: #000;
   padding: 3px;
   position: fixed;
@@ -26,15 +31,16 @@ form input {
 
 form button {
   width: 9%;
+  border-radius: 10px;
   background: rgb(130, 224, 255);
   border: none; padding: 10px;
 }
 
 .talk-bubble {
-  float: right;
+  padding: 4px;
   clear: both;
   max-width: 100px;
-  margin: 40px;
+  margin: 20px;
   border-radius: 15px;
   text-align: center;
   display: inline-block;
@@ -68,6 +74,14 @@ form button {
   bottom: auto;
   border: 12px solid;
   border-color: lightBlue transparent transparent lightBlue;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 .modal-container {

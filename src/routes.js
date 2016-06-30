@@ -6,7 +6,7 @@ import App from './components/App';
 export default (
   <Router history={browserHistory} >
     <Route path='/' component={SignIn}>
-      <Route path='chat' component={App} />
+    	<Route path='app/:user' component={App}></Route>
     </Route>
   </Router>
 )
