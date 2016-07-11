@@ -2,9 +2,11 @@ import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 export default (props) => {
+
   function determineUser() {
     return props.username ? 'Hey there, ' + props.username : 'Super Sweet Chat App';
   }
+  
   return (
     <Navbar inverse>
       <Navbar.Header>
