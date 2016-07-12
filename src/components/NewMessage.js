@@ -11,7 +11,6 @@ export default class extends React.Component {
 
 	sendMessage(e) {
 		e.preventDefault();
-		console.log(this.state);
 		socket.emit('sendMessage', this.state);
 		this.setState({ message: '' });
 	}
